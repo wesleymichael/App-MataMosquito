@@ -6,6 +6,19 @@ let timer = 15;
 let timeLevel = 1500;
 
 
+//Função para habilitar botão quando um nível for selecionado
+function able(){
+    if (document.getElementById('select').value !== ''){
+        let able = document.querySelector('button');
+        able.classList.add('able');
+        able.removeAttribute('disabled');
+    }
+    else{
+        document.querySelector('button').classList.remove('able');
+    }
+}
+
+
 //Função para selecionar o nível e definir a dificuldade conforme escolha do usuário
 function startGame(){
     let level = document.getElementById('select').value
@@ -28,7 +41,7 @@ function startGame(){
 
 function criarMosquito(){
     document.querySelector('#timer span').innerHTML = timer;
-    
+
     let level = window.location.search.replace('?','');
     if(level === 'facil'){
         timeLevel = 1500;
@@ -41,15 +54,23 @@ function criarMosquito(){
     }
 
     //Comando para criar um mosquito a cada 2 segundos. Adicionei numa variável para poder limpar quando o jogo acabar
-    let criarMosquito = setInterval(function(){
+    setInterval(function(){
         randomPosition();
     }, timeLevel);
 
-    //Criação do cronômetro
+    //Iniciar cronômetro quando aparecer o primeiro mosquito
+    setTimeout(function(){
+        cronometro();
+    }, timeLevel);
+    
+}
+
+
+//Função para criação do cronômetro
+function cronometro(){
     let cronometro = setInterval(function(){
         timer--;
         if (timer < 0){
-            clearInterval(criarMosquito);
             clearInterval(cronometro);
             window.location.href = 'victory.html';
         }
@@ -126,7 +147,6 @@ function randomSize(){
 }
 
 
-
 //Função para espelhar a imagem aleatoriamente
 function mirror(){
     let classe = Math.floor(Math.random() * 2);
@@ -138,6 +158,4 @@ function mirror(){
             return 'mirror';
     }   
 }
-
-
 

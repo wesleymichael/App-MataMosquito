@@ -12,11 +12,11 @@
     <body>
         <div class="container">
             <div class="imagem">
-                <img src="img/game_over.png" />
+                <img src="img/game.png" />
             </div>
 
             <div>
-                <select id="select">
+                <select id="select" onchange="able()">
                     <option value="">-- Selecione o nível --</option>
                     <option value="facil">Fácil</option>
                     <option value="medio">Médio</option>
@@ -25,7 +25,7 @@
             </div>
 
             <div>
-                <button class="btn-red" type="button" onclick="startGame()">Iniciar jogo</button>
+                <button class="btn-red" type="button" onclick="startGame()" disabled>Iniciar jogo</button>
             </div>
 
             <script>
