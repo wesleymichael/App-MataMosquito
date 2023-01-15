@@ -12,16 +12,16 @@
     <body onresize="adjustScreenSize()">
         <div class="painel">
             <div class="lives">
-                <img src="img/coracao_vazio.png" />
-                <img src="img/coracao_cheio.png" />
-                <img src="img/coracao_cheio.png" />
+                <img id="v1" src="img/coracao_cheio.png" />
+                <img id="v2" src="img/coracao_cheio.png" />
+                <img id="v3" src="img/coracao_cheio.png" />
             </div>
             <div class="timer">Tempo restante: <span>0</span></div>
         </div>
         <script>
             setInterval(function(){
                 randomPosition();
-            }, 1000);
+            }, 2000);
         </script>
     </body>
 </html>

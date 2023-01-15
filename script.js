@@ -1,6 +1,7 @@
 //Declaração de variáveis globais
 let height = 0;
 let width = 0;
+let heart = 1;
 
 
 //Função para ajustar o tamanho da tela de forma dinâmica
@@ -14,11 +15,19 @@ adjustScreenSize();
 //Função para criar posição randônica do mosquito
 function randomPosition(){
 
-    //remover o mosquito copiado na tela anteriormente
+    //remover o mosquito copiado na tela anteriormente. OBS: se for removido com o click não entrará aqui
     if( document.querySelector('#mosquito') !== null ){
         document.querySelector('#mosquito').remove();
-    }
 
+        if (heart > 3){
+            //Parar jogo e ir para a página de game over quando perder as três vidas
+            window.location.href = 'game_over.html'
+        }
+        else{
+            document.querySelector('#v'+ heart).src = "img/coracao_vazio.png";   
+            heart++;
+        }
+    }
 
     //console.log(height, width);
     let positionX = Math.floor(Math.random() * width) - 90;
@@ -36,8 +45,12 @@ function randomPosition(){
     mosquito.style.position = 'absolute';
     mosquito.id = 'mosquito';
 
+    //Quando clicar, remover o mosquito e não perder uma vida
+    mosquito.onclick = function(){
+        this.remove()
+    }
+    
     document.body.appendChild(mosquito);
-
 }
 
 
@@ -71,8 +84,9 @@ function mirror(){
 }
 
 
-
-
+/***Falta:  ***/
+//adicionar o tempoe link para página de vitória
+//
 
 
 
