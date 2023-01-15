@@ -1,0 +1,52 @@
+
+body{
+    background-image: url(../img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.painel{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 190px;
+    padding: 10px;
+    border-top: 1px solid #fff;
+    background-color: #fff;
+    opacity: 0.7;
+}
+
+.lives {
+    display: flex;
+}
+
+.lives img{
+    padding: 3px;
+}
+
+.timer{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.mosquito1{
+    width: 50px;
+    height: 50px;
+}
+
+.mosquito2{
+    width: 70px;
+    height: 70px;
+}
+
+.mosquito3{
+    width: 90px;
+    height: 90px;
+}
+
+.mirror{
+    transform: scaleX(-1);
+}
+
+
+
