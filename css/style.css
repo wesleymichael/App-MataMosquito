@@ -64,19 +64,41 @@ body{
     width: 100%;
 }
 
-.btn button{
+.btn-black{
     width: 120px;
     height: 50px;
-    border-radius: 10px;
+    border-radius: 5px;
     font-size: 18px;
     color: #fff;
     background-color: rgb(51, 49, 49);
     transition: all .2s;
     border: 0px;
 }
-.btn button:hover{
+.btn-black:hover{
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+.btn-red{ 
+    width: 140px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: red;
+    border: 0px;
+    font-size: 18px;
+    color: #fff;
+    transition: all 0.2s;
+}
+.btn-red:hover{
+    background-color: rgb(186, 62, 62);
+}
+
+
+select{
+    width: 180px;
+    height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
 

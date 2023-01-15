@@ -6,22 +6,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
         <script type="text/javascript" src="script.js"></script>
-        <title>Game - Mata Mosquito</title>
+        <title></title>
+        
     </head>
-
-    <body onresize="adjustScreenSize()">
-        <div class="painel">
-            <div class="lives">
-                <img id="v1" src="img/coracao_cheio.png" />
-                <img id="v2" src="img/coracao_cheio.png" />
-                <img id="v3" src="img/coracao_cheio.png" />
+    <body>
+        <div class="container">
+            <div class="imagem">
+                <img src="img/game_over.png" />
             </div>
-            <div class="timer">Tempo restante: <span>0</span></div>
+
+            <div>
+                <select id="select">
+                    <option value="">-- Selecione o nível --</option>
+                    <option value="facil">Fácil</option>
+                    <option value="medio">Médio</option>
+                    <option value="dificil">Díficil</option>                    
+                </select>
+            </div>
+
+            <div>
+                <button class="btn-red" type="button" onclick="startGame()">Iniciar jogo</button>
+            </div>
+
+            <script>
+                
+            </script>
         </div>
-        <script>
-            setInterval(function(){
-                randomPosition();
-            }, 2000);
-        </script>
+        
     </body>
 </html>

@@ -2,6 +2,62 @@
 let height = 0;
 let width = 0;
 let heart = 1;
+let timer = 15;
+let timeLevel = 1500;
+
+
+//Função para selecionar o nível e definir a dificuldade conforme escolha do usuário
+function startGame(){
+    let level = document.getElementById('select').value
+    if(level === ''){
+        alert('Selecione o nível!');
+    }
+    else{
+        if(level === 'facil'){
+            timeLevel = 1500;
+        }
+        else if(level === 'medio'){
+            timeLevel = 1000;
+        }
+        else if(level === 'dificil'){
+            timeLevel = 750;
+        }
+        window.location.href = "app.html?" + level;
+    }
+}
+
+function criarMosquito(){
+    document.querySelector('#timer span').innerHTML = timer;
+    
+    let level = window.location.search.replace('?','');
+    if(level === 'facil'){
+        timeLevel = 1500;
+    }
+    else if(level === 'medio'){
+        timeLevel = 1000;
+    }
+    else if(level === 'dificil'){
+        timeLevel = 750;
+    }
+
+    //Comando para criar um mosquito a cada 2 segundos. Adicionei numa variável para poder limpar quando o jogo acabar
+    let criarMosquito = setInterval(function(){
+        randomPosition();
+    }, timeLevel);
+
+    //Criação do cronômetro
+    let cronometro = setInterval(function(){
+        timer--;
+        if (timer < 0){
+            clearInterval(criarMosquito);
+            clearInterval(cronometro);
+            window.location.href = 'victory.html';
+        }
+        else{
+            document.querySelector('#timer span').innerHTML = timer;
+        }
+    }, 1000);
+}
 
 
 //Função para ajustar o tamanho da tela de forma dinâmica
@@ -82,12 +138,6 @@ function mirror(){
             return 'mirror';
     }   
 }
-
-
-/***Falta:  ***/
-//adicionar o tempoe link para página de vitória
-//
-
 
 
 
